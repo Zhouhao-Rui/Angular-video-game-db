@@ -17,9 +17,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { HTTPHeaderInterceptor } from "./interceptors/http-header.interceptor";
 import { HTTPErrorsInterceptor } from "./interceptors/http-errors.interceptor";
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchBarComponent, HomeComponent],
+  declarations: [AppComponent, SearchBarComponent, HomeComponent, DetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
