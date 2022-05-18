@@ -13,6 +13,7 @@ import { FormsModule } from "@angular/forms";
 import { MatSelectModule } from "@angular/material/select";
 import { SearchBarComponent } from "./components/search-bar/search-bar.component";
 import { HomeComponent } from "./components/home/home.component";
+import { HttpClientModule } from "@angular/common/http";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { HTTPHeaderInterceptor } from "./interceptors/http-header.interceptor";
 import { HTTPErrorsInterceptor } from "./interceptors/http-errors.interceptor";
@@ -29,6 +30,7 @@ import { HTTPErrorsInterceptor } from "./interceptors/http-errors.interceptor";
     MatSelectModule,
     MatTabsModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [
     {
