@@ -18,9 +18,10 @@ import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { HTTPHeaderInterceptor } from "./interceptors/http-header.interceptor";
 import { HTTPErrorsInterceptor } from "./interceptors/http-errors.interceptor";
 import { DetailsComponent } from './components/details/details.component';
+import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchBarComponent, HomeComponent, DetailsComponent],
+  declarations: [AppComponent, SearchBarComponent, HomeComponent, DetailsComponent, GameTabsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
