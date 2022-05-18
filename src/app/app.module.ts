@@ -12,7 +12,10 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { FormsModule } from "@angular/forms";
 import { MatSelectModule } from "@angular/material/select";
 import { SearchBarComponent } from "./components/search-bar/search-bar.component";
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from "./components/home/home.component";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { HTTPHeaderInterceptor } from "./interceptors/http-header.interceptor";
+import { HTTPErrorsInterceptor } from "./interceptors/http-errors.interceptor";
 
 @NgModule({
   declarations: [AppComponent, SearchBarComponent, HomeComponent],
@@ -27,7 +30,18 @@ import { HomeComponent } from './components/home/home.component';
     MatTabsModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HTTPHeaderInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HTTPErrorsInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
