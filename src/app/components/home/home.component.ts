@@ -19,9 +19,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
       if (params["game-search"]) {
-        this.searchGames("metacrit", params["game-search"]);
+        this.searchGames("name", params["game-search"]);
       } else {
-        this.searchGames("metacrit");
+        this.searchGames("name");
       }
     });
   }
@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
     this.httpService
       .getGameList(sort, search)
       .subscribe((gameList: APIResponse<Game>) => {
+        console.log(sort);
         this.games = gameList.results;
         console.log(gameList);
       });
